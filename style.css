@@ -1,0 +1,407 @@
+﻿body
+{
+	position:			absolute;
+	left:				0px;
+	top:				0px;
+	margin:				0px;
+	background-color:	#ffffff;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+		
+	transform-origin: left top;
+	-webkit-transform-origin: left top;
+	-ms-transform-origin: left top;
+	-moz-transform-origin: left top;
+}
+
+#screen
+{
+	position:			absolute;
+	top:				0px;
+	left:				0px;
+	width:				640px;
+	height:				1136px;
+	overflow:			hidden;
+	margin:				0px;
+	padding:			0px;
+	z-index:			-5;
+}
+
+
+
+#canvasCell
+{
+	display:			block;
+	position:			absolute;
+	top:				0px;
+	left:				0px;
+	width:				640px;
+	height:				1136px;
+	overflow:			hidden;
+	z-index:			-5;
+}
+
+#navCell
+{
+	display:			block;
+	background-color:	#000000;
+	padding:			0px;
+	margin:				0px;
+	opacity:			1.0;
+	position:			absolute;
+	top:				1047px; /* Default visible*/
+	left:				0px;
+	overflow:			auto; /* Mobile alternative */
+	width:				640px;
+	height:				100px;
+	vertical-align:		top;
+	z-index:			116;
+
+	-webkit-overflow-scrolling: touch;
+	
+	/*animation*/
+	transition-property:transform;
+	transition-duration:0.3s;
+	transition-timing-function:ease;
+	/* Firefox 4 */
+	-moz-transition-property:-moz-transform;
+	-moz-transition-duration:0.3s;
+	-moz-transition-timing-function:ease;
+	/* Safari and Chrome */
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:0.3s;
+	-webkit-transition-timing-function:ease;
+	/* Opera */
+	-o-transition-property:-o-transform;
+	-o-transition-duration:0.3s;
+	-o-transition-timing-function:ease;
+}
+
+#candidateCell
+{
+/*	background-color:	#ffffff;*/
+	vertical-align:		bottom;
+	padding:			0px;
+	opacity:			0.8;
+	display:			block;
+	position:			absolute;
+	left:				0px;
+	top:				1049px; /* Default invisible */
+/* 	height:				0px; */
+	width:				640px;
+	overflow:			hidden;
+	z-index:			112;	
+	/*animation*/
+	transition-property:transform;
+	transition-duration:0.3s;
+	transition-timing-function:ease;
+	/* Firefox 4 */
+	-moz-transition-property:-moz-transform;
+	-moz-transition-duration:0.3s;
+	-moz-transition-timing-function:ease;
+	/* Safari and Chrome */
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:0.3s;
+	-webkit-transition-timing-function:ease;
+	/* Opera */
+	-o-transition-property:-o-transform;
+	-o-transition-duration:0.3s;
+	-o-transition-timing-function:ease;
+
+}
+
+#hideCandidates
+{
+	display:			block;
+	position:			relative;
+	left:				20%;
+	top:				0px;
+	width:				84px;
+	height:				50px;
+	padding:			0px;
+	margin:				0px;
+	overflow:			hidden;
+	z-index:			113;
+}
+
+
+#toolCell
+{
+	display:			block;
+	background-color:	#000000;
+	opacity:			1.0;
+	position:			absolute;
+	left:				0px;
+	top:				0px; /* Default visible */
+	overflow-x:			auto;
+	overflow-y:			auto;
+	width:				640px;
+	height:				93px;
+	vertical-align:		middle;
+	z-index:			117;
+
+	/*animation*/
+	transition-property:transform;
+	transition-duration:0.3s;
+	transition-timing-function:ease;
+	/* Firefox 4 */
+	-moz-transition-property:-moz-transform;
+	-moz-transition-duration:0.3s;
+	-moz-transition-timing-function:ease;
+	/* Safari and Chrome */
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:0.3s;
+	-webkit-transition-timing-function:ease;
+	/* Opera */
+	-o-transition-property:-o-transform;
+	-o-transition-duration:0.3s;
+	-o-transition-timing-function:ease;
+
+}
+
+#tintCell
+{
+	background-color:	#000000;
+	opacity:			0.7;
+	vertical-align:		bottom;
+	position:			absolute;
+	top:				0px; /* Default invisible */
+ 	height:				82px;
+	width:				640px;
+	left:				0px;
+	overflow-x:			auto; /* Alternative for mobile */
+	overflow-y:			hidden;
+	z-index:			112;
+	
+	-webkit-overflow-scrolling: touch;
+	
+	/*animation*/
+	transition-property:transform;
+	transition-duration:0.3s;
+	transition-timing-function:ease;
+	/* Firefox 4 */
+	-moz-transition-property:-moz-transform;
+	-moz-transition-duration:0.3s;
+	-moz-transition-timing-function:ease;
+	/* Safari and Chrome */
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:0.3s;
+	-webkit-transition-timing-function:ease;
+	/* Opera */
+	-o-transition-property:-o-transform;
+	-o-transition-duration:0.3s;
+	-o-transition-timing-function:ease;
+
+}
+
+
+#loadingIndicator
+{
+	display:			block;
+	position:			absolute;
+	top:				0px;
+	left:				0px;
+	width:				640px;
+	height:				1136px;
+	opacity:			1.0;
+	background-color:	#ffffff;
+	z-index:			200;
+	text-align:			center;
+	vertical-align:		middle;
+	font-family:		"微软雅黑", "黑体", "Helvetica", "Calibri", "Roboto", "Arial", Sans;
+	background-image:	url("res/bg/item_bg_6.jpg");
+	
+	/*animation*/
+	transition-property:opacity;
+	transition-duration:0.5s;
+	transition-timing-function:ease;
+	/* Firefox 4 */
+	-moz-transition-property:opacity;
+	-moz-transition-duration:0.5s;
+	-moz-transition-timing-function:ease;
+	/* Safari and Chrome */
+	-webkit-transition-property:opacity;
+	-webkit-transition-duration:0.5s;
+	-webkit-transition-timing-function:ease;
+	/* Opera */
+	-o-transition-property:opacity;
+	-o-transition-duration:0.5s;
+	-o-transition-timing-function:ease;
+
+
+}
+
+#progBG
+{
+	width:				150px;
+	height:				30px;
+	background-color:	#66ccff;
+}
+#progress
+{
+	position:			relative;
+	left:				0px;
+	top:				0px;
+	width:				0px;
+	height:				30px;
+	background-color:	#0099cc;
+	transition: width, 0.1s;
+	-webkit-transition: width, 0.1s;
+	-moz-transition: width, 0.1s;
+	-o-transition: width, 0.1s;
+}
+
+
+canvas
+{
+	position:			absolute;
+	top:				0px;
+	left:				0px;
+	width:				640px;
+	height:				1136px;
+}
+
+.animated
+{
+	/*animation*/
+	transition-property:transform;
+	transition-duration:0.2s;
+	transition-timing-function:ease;
+	/* Firefox 4 */
+	-moz-transition-property:-moz-transform;
+	-moz-transition-duration:0.2s;
+	-moz-transition-timing-function:ease;
+	/* Safari and Chrome */
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:0.2s;
+	-webkit-transition-timing-function:ease;
+	/* Opera */
+	-o-transition-property:-webkit-transform;
+	-o-transition-duration:0.2s;
+	-o-transition-timing-function:ease;
+}
+
+table
+{
+	border-collapse:	collapse;
+	border-spacing:		0px;
+	border:				0px;
+	border-color:		transparent;
+}
+
+
+
+/* Links are no longer animated on mobile (They need no animation...) */
+
+/* Category Selector link */
+.candidate:link
+{
+	display:			block;
+	background-color:	#000000;
+	padding:			0px;
+	margin:				0px;
+}
+
+.activated:link
+{
+	display:			block;
+	background-color:	#000000;
+	padding:			0px;
+	margin:				0px;
+	background-image:	url("ui/navselect@2x.png");
+}
+
+.candidate:active
+{
+	background-color:	#666666;
+}
+
+/* Item Selector link */
+.itemCandidate:link
+{
+	display:			block;
+	background-color:	#ffffff;
+	padding:			0px;
+	margin:				0px;
+	text-decoration:	none;
+	overflow:			hidden;
+	width:				128px;
+}
+
+.itemCandidate:active
+{
+	background-color:	#cccccc;
+}
+.itemActivated:link
+{
+	display:			block;
+	background-image:	url("ui/modselect@2x.png");
+	background-repeat:	no-repeat;
+	background-position:center;
+	padding:			0px;
+	margin:				0px;
+	width:				128px;
+	overflow:			hidden;
+}
+
+
+/* Item selector container */
+.enabled
+{
+	display:			block;
+	background-color:	#ffffff;
+}
+
+.disabled
+{
+	display:			none;
+}
+
+/* Tint Selector */
+.tintCandidate:link
+{
+	display:			block;
+	background-color:	#000000;
+	padding:			0px;
+	margin:				0px;
+}
+
+.tintCandidate:active
+{
+	background-color:	#666666;
+}
+
+.tintActivated:link
+{
+	display:			block;
+	background-color:	#000000;
+	padding:			0px;
+	margin:				0px;
+	background-image:	url("ui/colorselect@2x.png");
+}
+
+/* Toolbar button */
+.toolButton:link
+{
+	display:			block;
+	padding:			0px;
+	margin:				0px;
+	background-color:	#000000;
+}
+
+.toolButton:active
+{
+	background-color:	#666666;
+}
+
+
+table#selector0 tr td a img
+{
+	width:				90%;
+	padding:			3%;
+	margin:				0px;
+}
+

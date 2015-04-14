@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>画咱妹</title>
+		<script type = "text/javascript" src = "jquery.js"></script>
+		<script type = "text/javascript" src = "main.js"></script>
+		<script type = "text/javascript" src = "animation.js"></script>
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+
+	</head>
+	<body onload = "loadComponents()" >
+	<div id = "screen">
+	
+		<div id = "imgPreload" style = "display:none">
+		</div>
+	
+		<div id = "loadingIndicator">
+			<br /><br /><br /><br /><br /><br />
+			<center style = "vertical-align:middle">
+				<h1>DrawWiz 画咱妹</h1>
+				<div id = "progBG" align = "left">
+					<div id = "progress">
+					</div>
+				</div><br />
+				<span>正在加载......</span><br />
+				<span>Loading images...</span><br />
+				<span id = "progText"></span>
+				<br /><br />
+				<img src = "ui/loading.gif" width = "200" height = "200" />
+			</center>
+		</div>
+
+		<div id = "canvasCell">
+			<canvas id = "gTarget" style = "z-index:100;"></canvas>
+			<!--WHY!!! AFTER DELETED THIS CANVAS ANDROID BEGIN TO GO WRONG!!!-->
+		</div>		
+		
+		<div id = "navCell">
+			<!--This cell is loaded dynamically-->
+		</div>
+		
+		<div id = "candidateCell">
+			<a href = "javascript:hideCandidates()" id = "hideCandidates">
+				<img src = "ui/btn_down.png" />
+			</a>
+			<!--This cell is loaded dynamically-->
+		</div>
+		
+		<div id = "toolCell">
+			<table width = "100%" height = "100%"><tr>
+				<td width = "50%" align = "center">
+					<a href = "javascript:toggleTint();" class = "toolButton">
+						<img src = "ui/btn-color.png"/>
+					</a>
+				</td>
+				<td width = "50%" align = "center">
+					<a href = "javascript:random();" class = "toolButton">
+						<img src = "ui/btn-random.png"/>
+					</a>
+				</td>			
+			</tr></table>
+		</div>
+
+		<div id = "tintCell">
+			<table width = "100%" height = "100%" id = "tintTable" style = "background-color:#000000"><tr id = "tintRow">
+			</tr></table>
+			<!--This cell is loaded dynamically-->
+		</div>
+
+		
+		<script type = "text/javascript">
+			function loadComponents()
+			{
+				var width = $(window).width(),
+				height = $(window).height();
+				document.body.style.webkitTransform = 
+				document.body.style.MozTransform = 
+				document.body.style.msTransform =
+				document.body.style.transform = "scale("+(width/640.0)+","+(width/640.0)+")";	// Maintain aspect ratio
+
+				setTimeout(function()
+				{
+					// Preload all images
+					initCanvas();
+					initCategory();
+					initTint();
+					loadImages();
+					fsChange();
+				},500);
+			}
+		</script>
+
+	</div>
+	</body>
+</html>
